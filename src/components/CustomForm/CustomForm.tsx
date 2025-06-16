@@ -1,12 +1,19 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { type SubmitHandler, useForm } from "react-hook-form";
 import InputForm from "./components/CustomInput";
-import { FormValues, schema } from "./models";
+import { type FormValues, schema } from "./models";
 
 const CustomForm = () => {
   const { control, handleSubmit, formState: { errors } } = useForm<FormValues>({
     resolver: zodResolver(schema),
-    mode: "onBlur"
+    mode: "onBlur",
+    defaultValues:{
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: ""
+    }
+    
   });
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
