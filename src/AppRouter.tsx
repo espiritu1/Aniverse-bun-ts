@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 import { BrowserRouter, Navigate, Route  } from 'react-router-dom';
-import {Login} from './public/Login/Login';
+import {Login} from './pages/public/Login/Login';
 import { PrivateGuard } from './guard/PrivateGuard';
-import { PrivateRouter } from './private/DashBoard/PrivateRouter';
+import { PrivateRouter } from './pages/private/DashBoard/PrivateRouter';
 import { RoutesWithNotFound } from './components/RoutesWithNotFound/RoutesWithNotFound';
 
 

@@ -1,13 +1,13 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import InputForm from "./components/CustomInput";
-import { type FormValues, schema } from "./models";
+import { type signUpValues, signUpSchema } from "./models";
 import Swal from "sweetalert2";
 
 
-const CustomForm = () => {
-  const { control, handleSubmit, formState: { errors } } = useForm<FormValues>({
-    resolver: zodResolver(schema),
+const SignUpForm = () => {
+  const { control, handleSubmit, formState: { errors } } = useForm<signUpValues>({
+    resolver: zodResolver(signUpSchema),
     mode: "onBlur",
     defaultValues:{
       userName: "",
@@ -22,7 +22,8 @@ const CustomForm = () => {
     console.log(data)
   } */
 
-const onSubmit: SubmitHandler<FormValues> = async (data) => {
+const onSubmit: SubmitHandler<signUpValues> = async (data) => {
+  
     try {
       const response = await fetch("http://localhost:8080/api/users", {
         method: "POST",
@@ -37,6 +38,7 @@ const onSubmit: SubmitHandler<FormValues> = async (data) => {
       });
 
       if (response.ok) {
+        
         const result = await response.json();
         Swal.fire({
           title: "¡Cuenta creada exitosamente!",
@@ -45,7 +47,7 @@ const onSubmit: SubmitHandler<FormValues> = async (data) => {
           background: '#1f2937',
           confirmButtonText: "Aceptar",
         });
-      //  console.log(data)
+      
       // Limpia el formulario
       } else {
         const errorData = await response.json();
@@ -71,8 +73,6 @@ const onSubmit: SubmitHandler<FormValues> = async (data) => {
   };
 
 
-
-  
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <InputForm name="userName" control={control} label="Name" type="text" error={errors.userName} palceholder="NickName"  autoComplete="username"/>
@@ -84,4 +84,5 @@ const onSubmit: SubmitHandler<FormValues> = async (data) => {
   )
 }
 
-export default CustomForm;
+export default SignUpForm;
+
