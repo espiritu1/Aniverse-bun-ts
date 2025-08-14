@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     return storedUser ? JSON.parse(storedUser) : null;
   });
 
-  // Cuando el usuario cambie, actualiza localStorage
+  // Cuando el usuario cambie, aactualiza localStorage
   const setUser = (user: AuthUser | null) => {
     setUserState(user);
     if (user) {

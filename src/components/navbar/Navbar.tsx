@@ -84,8 +84,8 @@ const NavBar = () => {
 				</div>
 				<div className="navbar-right">
 					 <ul>
-					 	<li className="navbar-shopping-cart">
-					 	<li className="navbar-email">{user?.userName}</li>
+					 	<li className="navbar-shopping-cart"> </li>
+					 	<li className="navbar-email">{user?.userName}
 					 		<img style={{maxHeight: "60px"}} className="" src={estusMagic} alt="shopping cart" />
 					 		<div>2</div>
 					 	</li>

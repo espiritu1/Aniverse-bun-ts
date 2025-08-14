@@ -14,7 +14,8 @@ const LogInForm =()=>{
 	});
 
 	const navigate = useNavigate();
-	const url = "http://localhost:8080/api/auth/login";
+	const url = "http://localhost:8080/api/auth";
+	
 	const onSubmit: SubmitHandler<logInValues> = async (data) => {
 		
 		try{
