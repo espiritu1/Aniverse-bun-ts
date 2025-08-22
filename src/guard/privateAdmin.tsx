@@ -1,13 +1,23 @@
 import { Navigate, Outlet } from "react-router-dom";
 
+interface User {
+  userName: string;
+  role: string;
+  email: string;
+}
+
 export const PrivateAdmin = () => {
-	const token = localStorage.getItem("token");
+  const userData = localStorage.getItem("user");
 
-	return token ? <Outlet/> : <Navigate to="/admin" replace/>
-} 
+  if (!userData) {
+    // Si no hay user en localStorage -> redirigir a login
+    return <Navigate to="/login" replace />;
+  }
 
-//se puede crear otro de esto para ver si la prsona es admin o no
-// export const AdminGuard = () => {
+  const user: User = JSON.parse(userData);
+  const isAdmin = user.role === "ADMIN_ROLE"; // 👈 validamos el rol
+  console.log("soy  private ADMIN")
+  
 
-// 	cosnt isAdmin = true
-// 	return isAdmin ? <Outlet/> : <Navigate to="/dashboard" replace/>z
+  return isAdmin ? <Outlet /> : <Navigate to="/private/home" replace />;
+};

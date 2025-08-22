@@ -37,7 +37,11 @@ const LogInForm =()=>{
 
 				const {_id, userName, role, email} = data.user;
 				setUser({id: _id, userName, role, email});
-				navigate("/private/home");
+
+				if(role==="ADMIN_ROLE")
+					navigate("/admin/admin");
+				else if(role==="USER_ROLE")
+					navigate("/private/home");
 
 			} else {
 				const errorData = await response.json();

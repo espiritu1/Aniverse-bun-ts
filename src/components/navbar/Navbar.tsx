@@ -10,7 +10,7 @@ import { useAuth } from "../../context/AuthContext";
 const NavBar = () => {
 	
 	const { user } = useAuth();
-  console.log("DATOS DEL USUARIO:___"+user?.userName+"___"+user?.role+"___"+user?.id);
+  /* console.log("DATOS DEL USUARIO:___"+user?.userName+"___"+user?.role+"___"+user?.id); */
 	
 	 useEffect(() => {
     const menuButton = document.querySelector(".menu") as HTMLElement | null;
