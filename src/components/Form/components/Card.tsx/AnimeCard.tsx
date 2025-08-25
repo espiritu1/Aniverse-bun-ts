@@ -27,19 +27,18 @@ const AnimeCard: React.FC<AnimeCardProps> = ({
 
 }) => {
   return (
-    <div className="anime-card" id={`${id}`}  style={{ backgroundImage: `url(${imageURL})` }}>
-      <div className="anime-info">
-        <h2>{title}</h2>
-        <p><strong>Año:</strong> {releaseYear}</p>
-        <p><strong>Categoría:</strong> {genre.join(", ")}</p>
-        <p><strong>Calificación:</strong> ⭐ {rating}/10</p>
+	<div className="anime-card" id={`${id}`}  style={{ backgroundImage: `url(${imageURL})` }}>
+		<div className="anime-info">
+			<h2>{title}</h2>
+			<p><strong>Año:</strong> {releaseYear}</p>
+			<p><strong>Categoría:</strong> {genre.join(", ")}</p>
+			<p><strong>Calificación:</strong> ⭐ {rating}/10</p>	
+			<p><strong>episodios</strong>  {episodes}/10</p>
+			<p><strong>status</strong>  {status}/10</p>
 
-		  <p><strong>episodios</strong>  {episodes}/10</p>
-		    <p><strong>status</strong>  {status}/10</p>
-		
-        <p className="desc">{description}</p>
-      </div>
-    </div>
+			<p className="desc">{description}</p>
+		</div>
+	</div>
   );
 };
 

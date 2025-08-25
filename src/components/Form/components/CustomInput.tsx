@@ -3,13 +3,13 @@ import './CustomInput.css'
 
 
 interface Props {
-  name: string;
-  control: Control<any>;
-  label: string;
-  type?: string;
-  error?: FieldError;
-   autoComplete?: string;
-   palceholder?: string;
+	name: string;
+	control: Control<any>;
+	label: string;
+	type?: string;
+	error?: FieldError;
+	autoComplete?: string;
+	palceholder?: string;
 }
 
 const InputForm = ({ name, control, label, type, error, autoComplete, palceholder }: Props) => {

@@ -22,6 +22,5 @@ export const Perfil = () => {
 			
 			<button type="submit" >Guardar Cambios</button>
 		</>
-
-  )
+		)
 }
