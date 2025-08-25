@@ -15,15 +15,16 @@ export const AppRouter= ({children} : Props)=>{
 	return (
 		<BrowserRouter>
 			<RoutesWithNotFound>
-				<Route path="/" element={<Navigate to={"/login"}/>} /> {/*rita inicial  */}
-				<Route path="/login" element={<Login/>} />
+				<Route path="/" element={<Navigate to={"/login"}/>} /> {/*ruta inicial  */}
+				<Route path="/login" element={<Login/>} /> {/*ruta publica  */}
+				
 				
 				
 			
-				<Route element={<PrivateGuard/>}>   {/* esto es la parte privada USER */}
-					<Route path="/private/*" element={<PrivateRouter/>} />
+				<Route element={<PrivateGuard/>}>   {/*rutas privadas */}
+					<Route path="/private/*" element={<PrivateRouter/>} /> {/* solo si tiene token  */}
 					
-					<Route element={<PrivateAdmin/>}>   
+					<Route element={<PrivateAdmin/>}>   {/* solo si tiene token y es administrador   */}
 						<Route path="/admin/*" element={<PrivateRouterAdmin/>} />
 					</Route>
 

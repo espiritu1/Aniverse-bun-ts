@@ -5,7 +5,6 @@ import CustomSelector from "./components/CustomSelector";
 import { type signUpValues, signUpSchema } from "./models";
 import Swal from "sweetalert2";
 
-
 const SignUpForm = () => {
   const { control, handleSubmit, formState: { errors } } = useForm<signUpValues>({
     resolver: zodResolver(signUpSchema),
@@ -24,9 +23,7 @@ const SignUpForm = () => {
     console.log(data)
   } */
  
-
-const onSubmit: SubmitHandler<signUpValues> = async (data) => {
-  
+const onSubmit: SubmitHandler<signUpValues> = async (data) => { 
   
     try {
       const response = await fetch("http://localhost:8080/api/users", {
@@ -99,10 +96,9 @@ const onSubmit: SubmitHandler<signUpValues> = async (data) => {
         error={errors.role}
       />
 
-
       <InputForm name="password" control={control} label="Password" type="password" error={errors.password}  palceholder="contraseña"  autoComplete="new-password"/>
       <InputForm name="Password2" control={control} label="Confirm Password" type="password" error={errors.Password2} palceholder="repetir contraseña" autoComplete="new-password"  />
-      <button type="submit" > Submit</button>
+      <button type="submit" > Crear Cuenta</button>
     </form>
   )
 }

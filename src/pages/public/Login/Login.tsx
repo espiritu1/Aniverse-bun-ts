@@ -1,7 +1,7 @@
 
 import LogInForm from "../../../components/Form/LogInForm"
 import SignUpForm from "../../../components/Form/SignUpForm"
-import NavBar from "../../../components/navbar/Navbar"
+import NavBar from "../../../components/navbar/NavBar"
 
 
 

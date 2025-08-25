@@ -1,6 +1,12 @@
-export const Admin = () => {
-  return (
+import { LogOut } from "../../../public/Login/LogOut"
 
-	<div>Pagina del Administado</div>
-  )
+
+export const Admin = () => {
+	
+	return (
+		<>
+			<LogOut/>
+			<div>Pagina del Administado</div>
+		</>
+	)
 }
