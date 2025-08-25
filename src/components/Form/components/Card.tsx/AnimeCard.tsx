@@ -34,7 +34,8 @@ const AnimeCard: React.FC<AnimeCardProps> = ({
 			<p><strong>Categoría:</strong> {genre.join(", ")}</p>
 			<p><strong>Calificación:</strong> ⭐ {rating}/10</p>	
 			<p><strong>episodios</strong>  {episodes}/10</p>
-			<p><strong>status</strong>  {status}/10</p>
+			<p><strong>status</strong>  {status}/10</p> 
+			<p>una extra p</p>
 
 			<p className="desc">{description}</p>
 		</div>
