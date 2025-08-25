@@ -35,7 +35,11 @@ const AnimeCard: React.FC<AnimeCardProps> = ({
 			<p><strong>Calificación:</strong> ⭐ {rating}/10</p>	
 			<p><strong>episodios</strong>  {episodes}/10</p>
 			<p><strong>status</strong>  {status}/10</p> 
-			
+
+			<p><strong>status</strong>  {status}/10</p> 
+			<p><strong>status</strong>  {status}/10</p> 
+			<p><strong>status</strong>  {status}/10</p> 
+			<p><strong>status</strong>  {status}/10</p> 
 
 			<p className="desc">{description}</p>
 		</div>
